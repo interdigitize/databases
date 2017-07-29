@@ -11,9 +11,6 @@ module.exports = {
       models.messages.post(req.body, () => {
         res.send();
       });
-      models.rooms.post(req.body, () => {
-        res.send();
-      });
     }
   },
 
