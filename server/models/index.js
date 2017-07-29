@@ -10,9 +10,9 @@ module.exports = {
     },
     post: function (body, callback) {
       // if (error) { throw error; }
-      db.query(`insert into users (username) values('${body.username}')`, function(error, results, field) {
+      db.query(`insert ignore into users (username) values('${body.username}')`, function(error, results, field) {
         if (error) { throw error; }
-        db.query(`insert into rooms (roomname) values('${body.roomname}')`, function(error, results, field) {
+        db.query(`insert ignore into rooms (roomname) values('${body.roomname}')`, function(error, results, field) {
           if (error) { throw error; }
           db.query(`SELECT users.id FROM users WHERE username='${body.username}'`, 
           function(error, results, field) {
